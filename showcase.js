@@ -21,3 +21,10 @@
     });
   });
 })();
+
+// The form service redirects here after a successful submission.
+(() => {
+  if (new URLSearchParams(window.location.search).get('enquiry') !== 'received') return;
+  const status = document.getElementById('enquiry-received');
+  if (status) status.hidden = false;
+})();
